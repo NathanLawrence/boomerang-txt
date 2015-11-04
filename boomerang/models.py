@@ -13,7 +13,6 @@ class SimpleMSG(models.Model):
 	message = models.CharField(max_length = 140)
 	creation_date = models.DateTimeField('date added', null=True)
 	delivery_date = models.DateTimeField('date to deliver')
-	origin = models.CharField(max_length = 100)
 	author = models.ForeignKey(User, related_name = "simple_author")
 	recipient = models.ForeignKey(User, related_name = "simple_recipient")
 
@@ -24,7 +23,6 @@ class RepeatMSG(models.Model):
 	message = models.CharField(max_length = 140)
 	creation_date = models.DateTimeField('date added', null=True)
 	delivery_interval = models.IntegerField('delivery interval in minutes')
-	origin = models.CharField(max_length = 100)
 	author = models.ForeignKey(User,related_name = "repeat_author")
 	recipient = models.ForeignKey(User, related_name = "repeat_recipient")
 
